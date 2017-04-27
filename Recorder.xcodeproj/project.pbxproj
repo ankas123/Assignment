@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1657071D1EB244E100A9A914 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1657071C1EB244E100A9A914 /* AppDelegate.swift */; };
+		1657071F1EB244E100A9A914 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1657071E1EB244E100A9A914 /* ViewController.swift */; };
+		165707221EB244E100A9A914 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165707201EB244E100A9A914 /* Main.storyboard */; };
+		165707241EB244E100A9A914 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 165707231EB244E100A9A914 /* Assets.xcassets */; };
+		165707271EB244E100A9A914 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165707251EB244E100A9A914 /* LaunchScreen.storyboard */; };
+		165707321EB244E100A9A914 /* RecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165707311EB244E100A9A914 /* RecorderTests.swift */; };
+		1657073D1EB244E100A9A914 /* RecorderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1657073C1EB244E100A9A914 /* RecorderUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1657072E1EB244E100A9A914 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 165707111EB244E100A9A914 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 165707181EB244E100A9A914;
+			remoteInfo = Recorder;
+		};
+		165707391EB244E100A9A914 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 165707111EB244E100A9A914 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 165707181EB244E100A9A914;
+			remoteInfo = Recorder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		165707191EB244E100A9A914 /* Recorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1657071C1EB244E100A9A914 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1657071E1EB244E100A9A914 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		165707211EB244E100A9A914 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		165707231EB244E100A9A914 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		165707261EB244E100A9A914 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		165707281EB244E100A9A914 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1657072D1EB244E100A9A914 /* RecorderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecorderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		165707311EB244E100A9A914 /* RecorderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderTests.swift; sourceTree = "<group>"; };
+		165707331EB244E100A9A914 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		165707381EB244E100A9A914 /* RecorderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecorderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1657073C1EB244E100A9A914 /* RecorderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderUITests.swift; sourceTree = "<group>"; };
+		1657073E1EB244E100A9A914 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		165707161EB244E100A9A914 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1657072A1EB244E100A9A914 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		165707351EB244E100A9A914 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		165707101EB244E000A9A914 = {
+			isa = PBXGroup;
+			children = (
+				1657071B1EB244E100A9A914 /* Recorder */,
+				165707301EB244E100A9A914 /* RecorderTests */,
+				1657073B1EB244E100A9A914 /* RecorderUITests */,
+				1657071A1EB244E100A9A914 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1657071A1EB244E100A9A914 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				165707191EB244E100A9A914 /* Recorder.app */,
+				1657072D1EB244E100A9A914 /* RecorderTests.xctest */,
+				165707381EB244E100A9A914 /* RecorderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1657071B1EB244E100A9A914 /* Recorder */ = {
+			isa = PBXGroup;
+			children = (
+				1657071C1EB244E100A9A914 /* AppDelegate.swift */,
+				1657071E1EB244E100A9A914 /* ViewController.swift */,
+				165707201EB244E100A9A914 /* Main.storyboard */,
+				165707231EB244E100A9A914 /* Assets.xcassets */,
+				165707251EB244E100A9A914 /* LaunchScreen.storyboard */,
+				165707281EB244E100A9A914 /* Info.plist */,
+			);
+			path = Recorder;
+			sourceTree = "<group>";
+		};
+		165707301EB244E100A9A914 /* RecorderTests */ = {
+			isa = PBXGroup;
+			children = (
+				165707311EB244E100A9A914 /* RecorderTests.swift */,
+				165707331EB244E100A9A914 /* Info.plist */,
+			);
+			path = RecorderTests;
+			sourceTree = "<group>";
+		};
+		1657073B1EB244E100A9A914 /* RecorderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1657073C1EB244E100A9A914 /* RecorderUITests.swift */,
+				1657073E1EB244E100A9A914 /* Info.plist */,
+			);
+			path = RecorderUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		165707181EB244E100A9A914 /* Recorder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 165707411EB244E100A9A914 /* Build configuration list for PBXNativeTarget "Recorder" */;
+			buildPhases = (
+				165707151EB244E100A9A914 /* Sources */,
+				165707161EB244E100A9A914 /* Frameworks */,
+				165707171EB244E100A9A914 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Recorder;
+			productName = Recorder;
+			productReference = 165707191EB244E100A9A914 /* Recorder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1657072C1EB244E100A9A914 /* RecorderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 165707441EB244E100A9A914 /* Build configuration list for PBXNativeTarget "RecorderTests" */;
+			buildPhases = (
+				165707291EB244E100A9A914 /* Sources */,
+				1657072A1EB244E100A9A914 /* Frameworks */,
+				1657072B1EB244E100A9A914 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1657072F1EB244E100A9A914 /* PBXTargetDependency */,
+			);
+			name = RecorderTests;
+			productName = RecorderTests;
+			productReference = 1657072D1EB244E100A9A914 /* RecorderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		165707371EB244E100A9A914 /* RecorderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 165707471EB244E100A9A914 /* Build configuration list for PBXNativeTarget "RecorderUITests" */;
+			buildPhases = (
+				165707341EB244E100A9A914 /* Sources */,
+				165707351EB244E100A9A914 /* Frameworks */,
+				165707361EB244E100A9A914 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1657073A1EB244E100A9A914 /* PBXTargetDependency */,
+			);
+			name = RecorderUITests;
+			productName = RecorderUITests;
+			productReference = 165707381EB244E100A9A914 /* RecorderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		165707111EB244E100A9A914 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Anant;
+				TargetAttributes = {
+					165707181EB244E100A9A914 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					1657072C1EB244E100A9A914 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 165707181EB244E100A9A914;
+					};
+					165707371EB244E100A9A914 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 165707181EB244E100A9A914;
+					};
+				};
+			};
+			buildConfigurationList = 165707141EB244E100A9A914 /* Build configuration list for PBXProject "Recorder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 165707101EB244E000A9A914;
+			productRefGroup = 1657071A1EB244E100A9A914 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				165707181EB244E100A9A914 /* Recorder */,
+				1657072C1EB244E100A9A914 /* RecorderTests */,
+				165707371EB244E100A9A914 /* RecorderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		165707171EB244E100A9A914 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				165707271EB244E100A9A914 /* LaunchScreen.storyboard in Resources */,
+				165707241EB244E100A9A914 /* Assets.xcassets in Resources */,
+				165707221EB244E100A9A914 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1657072B1EB244E100A9A914 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		165707361EB244E100A9A914 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		165707151EB244E100A9A914 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1657071F1EB244E100A9A914 /* ViewController.swift in Sources */,
+				1657071D1EB244E100A9A914 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		165707291EB244E100A9A914 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				165707321EB244E100A9A914 /* RecorderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		165707341EB244E100A9A914 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1657073D1EB244E100A9A914 /* RecorderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1657072F1EB244E100A9A914 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 165707181EB244E100A9A914 /* Recorder */;
+			targetProxy = 1657072E1EB244E100A9A914 /* PBXContainerItemProxy */;
+		};
+		1657073A1EB244E100A9A914 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 165707181EB244E100A9A914 /* Recorder */;
+			targetProxy = 165707391EB244E100A9A914 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		165707201EB244E100A9A914 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				165707211EB244E100A9A914 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		165707251EB244E100A9A914 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				165707261EB244E100A9A914 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1657073F1EB244E100A9A914 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		165707401EB244E100A9A914 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		165707421EB244E100A9A914 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Recorder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Recorder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		165707431EB244E100A9A914 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Recorder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Recorder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		165707451EB244E100A9A914 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RecorderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RecorderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Recorder.app/Recorder";
+			};
+			name = Debug;
+		};
+		165707461EB244E100A9A914 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RecorderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RecorderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Recorder.app/Recorder";
+			};
+			name = Release;
+		};
+		165707481EB244E100A9A914 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = RecorderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RecorderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Recorder;
+			};
+			name = Debug;
+		};
+		165707491EB244E100A9A914 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = RecorderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RecorderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Recorder;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		165707141EB244E100A9A914 /* Build configuration list for PBXProject "Recorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1657073F1EB244E100A9A914 /* Debug */,
+				165707401EB244E100A9A914 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		165707411EB244E100A9A914 /* Build configuration list for PBXNativeTarget "Recorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				165707421EB244E100A9A914 /* Debug */,
+				165707431EB244E100A9A914 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		165707441EB244E100A9A914 /* Build configuration list for PBXNativeTarget "RecorderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				165707451EB244E100A9A914 /* Debug */,
+				165707461EB244E100A9A914 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		165707471EB244E100A9A914 /* Build configuration list for PBXNativeTarget "RecorderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				165707481EB244E100A9A914 /* Debug */,
+				165707491EB244E100A9A914 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 165707111EB244E100A9A914 /* Project object */;
+}
