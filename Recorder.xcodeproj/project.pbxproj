@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16071C371EB27C7300A5B482 /* Beat.flac in Resources */ = {isa = PBXBuildFile; fileRef = 16071C361EB2784A00A5B482 /* Beat.flac */; };
+		16071C391EB27D0700A5B482 /* Beat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 16071C381EB27D0700A5B482 /* Beat.mp3 */; };
 		1657071D1EB244E100A9A914 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1657071C1EB244E100A9A914 /* AppDelegate.swift */; };
 		1657071F1EB244E100A9A914 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1657071E1EB244E100A9A914 /* ViewController.swift */; };
 		165707221EB244E100A9A914 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165707201EB244E100A9A914 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16071C361EB2784A00A5B482 /* Beat.flac */ = {isa = PBXFileReference; lastKnownFileType = file; path = Beat.flac; sourceTree = "<group>"; };
+		16071C381EB27D0700A5B482 /* Beat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Beat.mp3; sourceTree = "<group>"; };
 		165707191EB244E100A9A914 /* Recorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1657071C1EB244E100A9A914 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1657071E1EB244E100A9A914 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 		1657071B1EB244E100A9A914 /* Recorder */ = {
 			isa = PBXGroup;
 			children = (
+				16071C381EB27D0700A5B482 /* Beat.mp3 */,
+				16071C361EB2784A00A5B482 /* Beat.flac */,
 				1657071C1EB244E100A9A914 /* AppDelegate.swift */,
 				1657071E1EB244E100A9A914 /* ViewController.swift */,
 				165707201EB244E100A9A914 /* Main.storyboard */,
@@ -232,7 +238,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16071C371EB27C7300A5B482 /* Beat.flac in Resources */,
 				165707271EB244E100A9A914 /* LaunchScreen.storyboard in Resources */,
+				16071C391EB27D0700A5B482 /* Beat.mp3 in Resources */,
 				165707241EB244E100A9A914 /* Assets.xcassets in Resources */,
 				165707221EB244E100A9A914 /* Main.storyboard in Resources */,
 			);
@@ -419,6 +427,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Recorder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -431,6 +440,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Recorder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -507,6 +517,7 @@
 				165707431EB244E100A9A914 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		165707441EB244E100A9A914 /* Build configuration list for PBXNativeTarget "RecorderTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +526,7 @@
 				165707461EB244E100A9A914 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		165707471EB244E100A9A914 /* Build configuration list for PBXNativeTarget "RecorderUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +535,7 @@
 				165707491EB244E100A9A914 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
