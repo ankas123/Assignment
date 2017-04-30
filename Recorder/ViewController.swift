@@ -19,11 +19,11 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     var session : AVAudioSession!
     var audioRecorder : AVAudioRecorder!
     var NsPath: URL!
-    
+    var os : OperatingSystemVersion!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        os = ProcessInfo().operatingSystemVersion
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -35,6 +35,30 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     
     @IBAction func Stop(_ sender: UIButton) {
         
+        if #available(iOS 10, *) {
+            // Use iOS 10 APIs on iOS, and use macOS 10.12 APIs on macOS
+        } else {
+            // Fall back to earlier iOS and macOS APIs
+        }
+        
+//        let dirPath: AnyObject = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+//        
+//        let currentDateTime = NSDate()
+//        let formatter = NSDateFormatter()
+//        formatter.dateFormat = "ddMMyyyy-HHmmss"
+//        let recordingName = formatter.stringFromDate(currentDateTime)+".wav"
+//        let pathArray = [dirPath, recordingName]
+//        let filePath: NSURL = NSURL.fileURLWithPathComponents(pathArray)!
+//        println(filePath)
+//        
+//        let recordSettings = [  AVEncoderAudioQualityKey:   AVAudioQuality.Min.rawValue,
+//                                AVEncoderBitRateKey:        16,
+//                                AVNumberOfChannelsKey:      2,
+//                                AVSampleRateKey:            44100.0]
+//        
+//        let session = AVAudioSession.sharedInstance()
+//        session.setCategory(AVAudioSessionCategoryPlayAndRecord, error: nil)
+    
         //Stopping the audio recorder
         audioRecorder.stop()
         print("stopping")
@@ -114,6 +138,15 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
             audioPlayer = try AVAudioPlayer(contentsOf: NsPath)
         } catch let error {
             print(error);
+        }
+        
+        session = AVAudioSession.sharedInstance()
+        do{
+        try session.overrideOutputAudioPort(AVAudioSessionPortOverride.speaker)
+        try session.setActive(true)
+
+        } catch let error {
+            print(error)
         }
         
         //Audio Player play
