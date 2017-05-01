@@ -35,30 +35,6 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     
     @IBAction func Stop(_ sender: UIButton) {
         
-        if #available(iOS 10, *) {
-            // Use iOS 10 APIs on iOS, and use macOS 10.12 APIs on macOS
-        } else {
-            // Fall back to earlier iOS and macOS APIs
-        }
-        
-//        let dirPath: AnyObject = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
-//        
-//        let currentDateTime = NSDate()
-//        let formatter = NSDateFormatter()
-//        formatter.dateFormat = "ddMMyyyy-HHmmss"
-//        let recordingName = formatter.stringFromDate(currentDateTime)+".wav"
-//        let pathArray = [dirPath, recordingName]
-//        let filePath: NSURL = NSURL.fileURLWithPathComponents(pathArray)!
-//        println(filePath)
-//        
-//        let recordSettings = [  AVEncoderAudioQualityKey:   AVAudioQuality.Min.rawValue,
-//                                AVEncoderBitRateKey:        16,
-//                                AVNumberOfChannelsKey:      2,
-//                                AVSampleRateKey:            44100.0]
-//        
-//        let session = AVAudioSession.sharedInstance()
-//        session.setCategory(AVAudioSessionCategoryPlayAndRecord, error: nil)
-    
         //Stopping the audio recorder
         audioRecorder.stop()
         print("stopping")
