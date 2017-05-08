@@ -60,7 +60,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
         let recordName = "recording.m4a"
         let pathArray = [dirPath, recordName]
-        NsPath = NSURL.fileURL(withPathComponents: pathArray )
+        NsPath = NSURL.fileURL(withPathComponents: pathArray)
         
         
         

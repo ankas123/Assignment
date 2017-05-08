@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,12 @@
 		165707271EB244E100A9A914 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165707251EB244E100A9A914 /* LaunchScreen.storyboard */; };
 		165707321EB244E100A9A914 /* RecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165707311EB244E100A9A914 /* RecorderTests.swift */; };
 		1657073D1EB244E100A9A914 /* RecorderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1657073C1EB244E100A9A914 /* RecorderUITests.swift */; };
+		168C85BB1EBDE74000327255 /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C85BA1EBDE74000327255 /* Conversion.swift */; };
+		168C85BD1EBF0DFF00327255 /* TextOnAirController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C85BC1EBF0DFF00327255 /* TextOnAirController.swift */; };
+		168C85BF1EBF0F9300327255 /* SoundInterpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C85BE1EBF0F9300327255 /* SoundInterpreter.swift */; };
+		168C85DB1EBF43C600327255 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 168C85DA1EBF43C600327255 /* AudioKit.framework */; };
+		168C85DC1EBF43C600327255 /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 168C85DA1EBF43C600327255 /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		16F3DE551EB8C06500BE29BD /* SoundParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F3DE541EB8C06500BE29BD /* SoundParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		168C85C71EBF37DB00327255 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				168C85DC1EBF43C600327255 /* AudioKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		16071C361EB2784A00A5B482 /* Beat.flac */ = {isa = PBXFileReference; lastKnownFileType = file; path = Beat.flac; sourceTree = "<group>"; };
 		16071C381EB27D0700A5B482 /* Beat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Beat.mp3; sourceTree = "<group>"; };
@@ -51,6 +71,11 @@
 		165707381EB244E100A9A914 /* RecorderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecorderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1657073C1EB244E100A9A914 /* RecorderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderUITests.swift; sourceTree = "<group>"; };
 		1657073E1EB244E100A9A914 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		168C85BA1EBDE74000327255 /* Conversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
+		168C85BC1EBF0DFF00327255 /* TextOnAirController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextOnAirController.swift; sourceTree = "<group>"; };
+		168C85BE1EBF0F9300327255 /* SoundInterpreter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundInterpreter.swift; sourceTree = "<group>"; };
+		168C85DA1EBF43C600327255 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = "../AudioKit-iOS/AudioKit.framework"; sourceTree = "<group>"; };
+		16F3DE541EB8C06500BE29BD /* SoundParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				168C85DB1EBF43C600327255 /* AudioKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +107,7 @@
 		165707101EB244E000A9A914 = {
 			isa = PBXGroup;
 			children = (
+				168C85DA1EBF43C600327255 /* AudioKit.framework */,
 				1657071B1EB244E100A9A914 /* Recorder */,
 				165707301EB244E100A9A914 /* RecorderTests */,
 				1657073B1EB244E100A9A914 /* RecorderUITests */,
@@ -106,9 +133,13 @@
 				1657071C1EB244E100A9A914 /* AppDelegate.swift */,
 				1657071E1EB244E100A9A914 /* ViewController.swift */,
 				165707201EB244E100A9A914 /* Main.storyboard */,
+				16F3DE541EB8C06500BE29BD /* SoundParser.swift */,
+				168C85BE1EBF0F9300327255 /* SoundInterpreter.swift */,
+				168C85BC1EBF0DFF00327255 /* TextOnAirController.swift */,
 				165707231EB244E100A9A914 /* Assets.xcassets */,
 				165707251EB244E100A9A914 /* LaunchScreen.storyboard */,
 				165707281EB244E100A9A914 /* Info.plist */,
+				168C85BA1EBDE74000327255 /* Conversion.swift */,
 			);
 			path = Recorder;
 			sourceTree = "<group>";
@@ -141,6 +172,8 @@
 				165707151EB244E100A9A914 /* Sources */,
 				165707161EB244E100A9A914 /* Frameworks */,
 				165707171EB244E100A9A914 /* Resources */,
+				168C85C71EBF37DB00327255 /* Embed Frameworks */,
+				168C85D21EBF413600327255 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -200,22 +233,25 @@
 					165707181EB244E100A9A914 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = N76D88D463;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					1657072C1EB244E100A9A914 = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 165707181EB244E100A9A914;
 					};
 					165707371EB244E100A9A914 = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 165707181EB244E100A9A914;
 					};
 				};
 			};
 			buildConfigurationList = 165707141EB244E100A9A914 /* Build configuration list for PBXProject "Recorder" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -263,13 +299,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		168C85D21EBF413600327255 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH/AudioKit.framework/fix-framework.sh";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		165707151EB244E100A9A914 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				168C85BF1EBF0F9300327255 /* SoundInterpreter.swift in Sources */,
 				1657071F1EB244E100A9A914 /* ViewController.swift in Sources */,
+				168C85BB1EBDE74000327255 /* Conversion.swift in Sources */,
 				1657071D1EB244E100A9A914 /* AppDelegate.swift in Sources */,
+				16F3DE551EB8C06500BE29BD /* SoundParser.swift in Sources */,
+				168C85BD1EBF0DFF00327255 /* TextOnAirController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +422,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos10.3;
@@ -412,7 +468,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos10.3;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -427,8 +483,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = N76D88D463;
+				FRAMEWORK_SEARCH_PATHS = "../Audiokit-iOS";
 				INFOPLIST_FILE = Recorder/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Anant.Recorder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -444,8 +501,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = N76D88D463;
+				FRAMEWORK_SEARCH_PATHS = "../Audiokit-iOS";
 				INFOPLIST_FILE = Recorder/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Anant.Recorder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
