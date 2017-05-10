@@ -10,6 +10,8 @@ import UIKit
 
 class TextOnAirController: UIViewController {
 
+    @IBOutlet weak var stop: UIButton!
+    @IBOutlet weak var recieve: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +35,23 @@ class TextOnAirController: UIViewController {
     }
     */
     @IBAction func recieve(_ sender: UIButton) {
+        recieve.isEnabled = false
+        stop.isEnabled = true
+        
+        
         SoundInterpreter.shared().track()
     }
     
     @IBAction func play(_ sender: UIButton) {
         FMSynthesizer.sharedSynth().play()
     }
+    @IBAction func Stop(_ sender: UIButton) {
+        
+        recieve.isEnabled = true
+        stop.isEnabled = false
+
+        SoundInterpreter.shared().readFromFile()
+    }
+    
 
 }

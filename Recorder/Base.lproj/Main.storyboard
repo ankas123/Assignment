@@ -92,7 +92,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGA-6l-YBx">
-                                <rect key="frame" x="244" y="318" width="54" height="30"/>
+                                <rect key="frame" x="212" y="318" width="54" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Recieve"/>
                                 <connections>
@@ -112,9 +112,21 @@
                                     <action selector="play:" destination="YkW-mb-c60" eventType="touchUpInside" id="ND7-x7-pds"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IhO-aT-hMP">
+                                <rect key="frame" x="296" y="318" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="Stop:" destination="YkW-mb-c60" eventType="touchUpInside" id="JMm-VD-zSo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="recieve" destination="BGA-6l-YBx" id="qJN-vH-mKn"/>
+                        <outlet property="stop" destination="IhO-aT-hMP" id="Qhf-El-04q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ib-7l-ToO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

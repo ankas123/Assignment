@@ -56,7 +56,7 @@ open class FMSynthesizer {
     
     var timer : Timer!
     
-    var oscillator = AKOscillator()
+    var oscillator = AKOscillator(waveform: AKTable(.square))
     
     open class func sharedSynth() -> FMSynthesizer {
         return gFMSynthesizer
@@ -85,32 +85,55 @@ open class FMSynthesizer {
     open func play() {
         let con = Conversion()
         var bits = [UInt8]()
-        bits = con.toBinary(value: "$ab$")
-        var i = 0
+        var zeros = 0
+        var ones = 0
+        bits = con.toBinary(value: "$ohh yeah$")
+        //bits = [0b0, 0b1, 0b0, 0b1, 0b0, 0b1, 0b0, 0b1, 0b0, 0b1, 0b0, 0b1]
+        
         audioQueue.async{
             
-        while  i < bits.capacity{
+       for i in 0...bits.count - 1{
+            if i == bits.count - 1
+            {
+                break
+            } else {
             var bit = bits[i]
 
             if bit == .allZeros{
                
-                self.generateSine(freq: 100.0, duration: 0.01)
+                self.generateSine(freq: 1800.0, duration: 0.05)
                 print(0)
+                zeros += 1
                 
             } else if bit == 0b0000_0001{
                 
-                self.generateSine(freq: 1200.0, duration: 0.01)
+                self.generateSine(freq: 3000.0, duration: 0.05)
                 print(1)
-                
+                 ones += 1
             }
             self.audioSemaphore.wait(timeout: DispatchTime.distantFuture)
 
-            i+=1
+        }
             
             }
+//
+//            while i < 2 {
+//                self.generateSine(freq: (7000 * i), duration: 0.1)
+//                self.audioSemaphore.wait(timeout: DispatchTime.distantFuture)
+//                
+//                i += 1
+//                self.generateSine(freq: 0, duration: 0.1)
+//                self.audioSemaphore.wait(timeout: DispatchTime.distantFuture)
+//            }
+//
+            
+            print("0: " + String(zeros) + " 1: " + String(ones) )
+        
+            AudioKit.stop()
         
         //deallocate()
         }
+        print("done")
         
         
     }
@@ -181,7 +204,7 @@ open class FMSynthesizer {
             oscillator.stop()
         }
         
-        oscillator.amplitude = 0.7
+        oscillator.amplitude = 1
         oscillator.frequency = freq
         
        
@@ -202,7 +225,7 @@ open class FMSynthesizer {
         oscillator.stop()
 
         timer.invalidate()
-        print("yes")
+        //print("yes")
         audioSemaphore.signal()
     }
         
