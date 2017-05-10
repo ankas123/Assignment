@@ -82,12 +82,12 @@ open class FMSynthesizer {
         NotificationCenter.default.addObserver(self, selector: #selector(FMSynthesizer.audioEngineConfigurationChange(_:)), name: NSNotification.Name.AVAudioEngineConfigurationChange, object: engine)
     }
     
-    open func play() {
+    open func play(toSend :String) {
         let con = Conversion()
         var bits = [UInt8]()
         var zeros = 0
         var ones = 0
-        bits = con.toBinary(value: "$ohh yeah$")
+        bits = con.toBinary(value: toSend)
         //bits = [0b0, 0b1, 0b0, 0b1, 0b0, 0b1, 0b0, 0b1, 0b0, 0b1, 0b0, 0b1]
         
         audioQueue.async{
@@ -97,7 +97,7 @@ open class FMSynthesizer {
             {
                 break
             } else {
-            var bit = bits[i]
+            let bit = bits[i]
 
             if bit == .allZeros{
                
@@ -117,21 +117,12 @@ open class FMSynthesizer {
             
             }
 //
-//            while i < 2 {
-//                self.generateSine(freq: (7000 * i), duration: 0.1)
-//                self.audioSemaphore.wait(timeout: DispatchTime.distantFuture)
-//                
-//                i += 1
-//                self.generateSine(freq: 0, duration: 0.1)
-//                self.audioSemaphore.wait(timeout: DispatchTime.distantFuture)
-//            }
 //
             
             print("0: " + String(zeros) + " 1: " + String(ones) )
         
             AudioKit.stop()
         
-        //deallocate()
         }
         print("done")
         
@@ -142,61 +133,6 @@ open class FMSynthesizer {
     
     
     func generateSine( freq : Double, duration : Double){
-        
-//        let unitVelocity = Float32(2.0 * .pi / audioFormat.sampleRate)
-//        let carrierFrequency = freq
-//        let Velocity = carrierFrequency * unitVelocity
-//        var counter = duration
-//        
-//        var sampleTime: Float32 = 0
-//        
-//        playerNode.pan = 0.8
-//        playerNode.play()
-//        
-//            while counter > 0 {
-//                
-//                self.audioSemaphore.wait(timeout: DispatchTime.distantFuture)
-//                
-//                print("high")
-//                let audioBuffer = self.audioBuffers[self.bufferIndex]
-//                let leftChannel = audioBuffer.floatChannelData?[0]
-//                let rightChannel = audioBuffer.floatChannelData?[1]
-//
-//                for sampleIndex in 0...kSamplesPerBuffer {
-//                    let sample = sin(Velocity * sampleTime)
-//                    leftChannel?[Int(sampleIndex)] = sample
-//                    rightChannel?[Int(sampleIndex)] = sample
-//                    sampleTime += 1
-//                }
-//                
-//                audioBuffer.frameLength = kSamplesPerBuffer
-//                
-//                
-//                self.playerNode.scheduleBuffer(audioBuffer, completionHandler: {
-//                    
-//                    counter -= 1
-//                    print(counter)
-//                    if counter != 0 {
-//                        
-//                        self.audioSemaphore.signal()
-//                        
-//                    } else {
-//                        print("stop")
-//                        self.playerNode.stop()
-//                        
-//                    }
-//                   
-//                    
-//                    return
-//
-//                    })
-//                    
-//                
-//                
-//                self.bufferIndex = (self.bufferIndex + 1) % self.audioBuffers.count
-//
-//            }
-//        
         
         
         if oscillator.isPlaying {

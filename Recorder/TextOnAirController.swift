@@ -39,16 +39,18 @@ class TextOnAirController: UIViewController {
         stop.isEnabled = true
         
         
-        SoundInterpreter.shared().track()
+        SoundInterpreter.shared().record()
     }
     
     @IBAction func play(_ sender: UIButton) {
-        FMSynthesizer.sharedSynth().play()
+        FMSynthesizer.sharedSynth().play(toSend: "$ab$")
     }
     @IBAction func Stop(_ sender: UIButton) {
         
         recieve.isEnabled = true
         stop.isEnabled = false
+        
+        SoundInterpreter.shared().recorderStop()
 
         SoundInterpreter.shared().readFromFile()
     }

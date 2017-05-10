@@ -14,47 +14,50 @@ import AVFoundation
 fileprivate let soundInterpreter: SoundInterpreter = SoundInterpreter()
 
 class SoundInterpreter: NSObject, AVAudioRecorderDelegate, AVAudioPlayerDelegate  {
-    var mic: AKMicrophone!
-    var tracker: AKFrequencyTracker!
-    var silence: AKBooster!
+    private var mic: AKMicrophone!
+    private var tracker: AKFrequencyTracker!
+    private var silence: AKBooster!
     fileprivate let audioQueue: DispatchQueue = DispatchQueue(label: "Sound", attributes: [])
     fileprivate let playQueue: DispatchQueue = DispatchQueue(label: "play", qos : .utility, attributes: .concurrent)
 
     fileprivate let audioSemaphore: DispatchSemaphore = DispatchSemaphore(value: 0)
 
     
-    var audioPlayer : AVAudioPlayer!
-    var session : AVAudioSession!
-    var audioRecorder : AVAudioRecorder!
-    var NsPath: URL!
+    private var audioPlayer : AVAudioPlayer!
+    private var session : AVAudioSession!
+    private var audioRecorder : AVAudioRecorder!
+    private var NsPath: URL!
     
-    let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-    let recordName = "text.m4a"
+    private let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+    private let recordName = "text.m4a"
 
-    var operationQueue = OperationQueue()
 
     private var frequencies  = [Float]()
     var bitArray = [Int]()
+    
+    
+    
+    private let kFrameCapacity = AVAudioFrameCount(256)
     
     
     open class func shared() -> SoundInterpreter {
         return soundInterpreter
     }
     
+    struct bitPacket {
+        var bit : Int = 0
+        var duration : Float = 0.0
+    }
     
-    fileprivate override init(){
-        
-        
-        }
+    var packet = bitPacket()
+
     
-    
+
     
     func record(){
         //Path Deffining
         let pathArray = [dirPath, recordName]
         NsPath = NSURL.fileURL(withPathComponents: pathArray)
-        
-        
         
         
         //New session
@@ -88,238 +91,17 @@ class SoundInterpreter: NSObject, AVAudioRecorderDelegate, AVAudioPlayerDelegate
         print("recording")
         audioRecorder.record()
         
-        
-        
     }
     
      func recorderStop() {
         
         //Stopping the audio recorder
         audioRecorder.stop()
-//        print("stopping")
-//        
-//        //Deactivating the session
-//        let audioSession = AVAudioSession.sharedInstance();
-//        do{
-//            try audioSession.setActive(false);
-//        } catch let error{
-//            print(error)
-//        }
-//        do {
-//            
-//            audioPlayer = try AVAudioPlayer(contentsOf: NsPath)
-//        } catch let error {
-//            print(error);
-//        }
-//        
-//        session = AVAudioSession.sharedInstance()
-//        do{
-//            try session.overrideOutputAudioPort(AVAudioSessionPortOverride.speaker)
-//            try session.setActive(true)
-//            
-//        } catch let error {
-//            print(error)
-//        }
-//        
-//        //Audio Player play
-//        audioPlayer.delegate = self 
-//        audioPlayer.play()
-//        
-        let file :AVAudioFile
-        let akfile : AKAudioFile
-        let tracker : AKFrequencyTracker
-        let audioPlayer : AKAudioPlayer
-        
-        do{
-            file = try AVAudioFile(forReading: NsPath )
-            akfile = try AKAudioFile(forReading: file.url)
-            print(akfile.sampleRate)
-        
-            audioPlayer = try AKAudioPlayer(file: akfile, looping: false,completionHandler: stopOperation  )
-            
-            tracker = AKFrequencyTracker(audioPlayer, hopSize: 256)
-            
-           
-            AudioKit.output = tracker
-            AudioKit.start()
-            operationSetup(player: audioPlayer, tracker: tracker)
-            
-            
-        
-        } catch let error{
-            print(error)
-        }
-        
-      
-    }
+  }
     
-    func operationSetup(player: AKAudioPlayer, tracker: AKFrequencyTracker){
-        let operation1 : BlockOperation = BlockOperation (block: {
-            self.checkFrequency(player: player, tracker: tracker)
-            })
-         operationQueue.addOperation(operation1)
-    }
-    
-     @objc func checkFrequency(player: AKAudioPlayer, tracker: AKFrequencyTracker){
-        player.play()
-        var previous = Float()
-        var bit = 0b0
-        var count = 0
-        while true{
-                if tracker.amplitude > 0.1 {
-                    
-                    var frequency = Float(tracker.frequency)
-                    //print(frequency)
-                     if -100.0 ... 100.0 ~= (frequency - 3000.0){
-                    //self.frequencies.append(frequency)
-                        //print(1)
-                        bit = 0b1
-                        
-                    }
-                    if -100.0 ... 100.0 ~= (frequency - 1800.0){
-                        //self.frequencies.append(frequency)
-                        //print(0)
-                        bit = 0b0
-                        
-                    }
-                    
-//                    if bit == previous {
-//                      
-//                        count += 1
-//                        
-//                    } else {
-//                        //print(bit)
-//                        bitArray.append(count)
-//                        count = 0
-//                        previous = bit
-//                    }
-//                   
-                    if frequency == previous {
-                        
-                    } else {
-                        print(frequency)
-                        previous = frequency
-                    }
-                    
-                    usleep(1)
-                    
-            }
-
-        }
-        
-    }
-    
-    
-    func stopOperation(){
-        operationQueue.cancelAllOperations()
-        print(frequencies.count)
-        AudioKit.stop()
-       // getCount()
-        
-    }
-    
-    func getCount(){
-        
-        var bitcount = 0
-        print(bitArray)
-        if(bitArray[3] < bitArray[1]){
-            
-            bitcount = bitArray[3]
-            
-        } else {
-            
-            bitcount = bitArray[1]
-        }
-        var repeater = 0
-                var bit = [UInt8]()
-            for i in 1...bitArray.count-1{
-            
-            print(String(i) + " " + String(bitArray[i] % bitcount) + " " + String(bitArray[i] / bitcount))
-            repeater = bitArray[i] / bitcount
-            print(bitcount - (bitArray[i] % bitcount))
-//            if  (bitcount - (bitArray[i] % bitcount)) < (bitcount * 0.50){
-//                repeater += 1
-//            }
-//            
-//            if i % 2 == 0 {
-//                for j in 0...repeater {
-//                    bit.append(0b0)
-//                }
-//                
-//            }
-//            else {
-//                for j in 0...repeater{
-//                    bit.append(0b1)
-//                }
-//            }
-            repeater = 0
-            
-        }
-        
-        print(bit)
-        bit = []
-//        var value = 0
-//        var zeros = 0
-//        var ones = 0
-//
-//        if bit.count != 0{
-//            for i in 0...bit.count-2{
-//                if bit[i] == bit[i+1]{
-//                    value += 1
-//                    
-//                }
-//                else {
-//                    var display = String(bit[i]) + "   " + String(value)
-//                    if bit[i] == .allZeros{
-//                        zeros += 1
-//                        
-//                    }
-//                    else {
-//                        ones += 1
-//                        
-//                    }
-//                    //print(display)
-//                    value = 0
-//                }
-//                
-//            }
-//        }
-//        print("0: " + String(zeros) + " 1: " + String(ones) )
-//        zeros = 0
-//        ones = 0
-    }
-    
-    func track(){
-        record()
-        
-        bitArray = []
-        
-    }
 
     
-    @objc func check(){
-        audioSemaphore.signal()
-    }
 
-    
-    
-    
-    
-    
-    
-    
-    let kFrameCapacity = AVAudioFrameCount(256)
-
-    
-    var magi = [Float]()
-    var magi2 = [Float]()
-
-    struct bitPacket {
-        var bit : Int = 0
-        var duration : Float = 0.0
-    }
-    
-    var packet = bitPacket()
     
     func readFromFile(){
         audioRecorder.stop()
@@ -331,7 +113,6 @@ class SoundInterpreter: NSObject, AVAudioRecorderDelegate, AVAudioPlayerDelegate
         
         var file : AVAudioFile = AVAudioFile()
         
-        var bufferIndex: Int = 0
         
         for _ in 0...2{
             
@@ -356,10 +137,9 @@ class SoundInterpreter: NSObject, AVAudioRecorderDelegate, AVAudioPlayerDelegate
         var i = 0
         var checkPacket = bitPacket()
         
-        var count = 0
         var bits =  [bitPacket]()
             //audio Buffer has the samples
-       // playQueue.async {
+       
             
             while file.framePosition != file.length{
                 do {
@@ -395,7 +175,7 @@ class SoundInterpreter: NSObject, AVAudioRecorderDelegate, AVAudioPlayerDelegate
                     }
                 
                 }
-           // }
+        
             
     
         
@@ -415,7 +195,6 @@ class SoundInterpreter: NSObject, AVAudioRecorderDelegate, AVAudioPlayerDelegate
         
         let floatArray = Array(UnsafeBufferPointer(start: buffer.floatChannelData?[0], count:Int(buffer.frameLength)))
 
-       // play.async{
         
         
         fft.windowType = TempiFFTWindowType.hanning
@@ -424,8 +203,7 @@ class SoundInterpreter: NSObject, AVAudioRecorderDelegate, AVAudioPlayerDelegate
             fft.fftForward(floatArray)
             
             var mag = Float(0)
-            //var magat = fft.magnitudeAtFrequency(14000)
-            
+        
             for i in 1...200{
                 
                 mag = fft.sumMagnitudes(lowFreq: Float(100.0 * i) , highFreq: Float(100.0 * (i + 1)), useDB: false)
@@ -456,10 +234,9 @@ class SoundInterpreter: NSObject, AVAudioRecorderDelegate, AVAudioPlayerDelegate
                 }
             }
 
-      //  }
+      
         
-        //magi.append(mag)
-        //magi2.append(magat)
+        
         
         return -1
         
@@ -468,13 +245,13 @@ class SoundInterpreter: NSObject, AVAudioRecorderDelegate, AVAudioPlayerDelegate
     func decode(bit :  [bitPacket] ) {
         var bits = [UInt8]()
         if bit.count > 1{
-        var times = bit[1].duration
+        let times = bit[1].duration
         
         for i in 1...bit.count-1 {
             
             var count = Int(bit[i].duration / times)
             
-            if (bit[i].duration.truncatingRemainder(dividingBy: times)) > (times * 0.4){
+            if (bit[i].duration.truncatingRemainder(dividingBy: times)) > (times * 0.5){
                 count += 1
             }
             
@@ -497,7 +274,7 @@ class SoundInterpreter: NSObject, AVAudioRecorderDelegate, AVAudioPlayerDelegate
         bits.insert(0b0, at: 0)
         bits.insert(0b0, at: 0)
         print(bits)
-        var conv = Conversion()
+        let conv = Conversion()
         conv.toChar(recieve: bits)
         }
     }
